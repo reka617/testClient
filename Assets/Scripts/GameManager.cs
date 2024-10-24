@@ -6,6 +6,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+
+    public Monster monsterPrefab;
+    public Monster monsterGameObject;
     
     private void OnApplicationQuit()
     {
@@ -64,6 +67,16 @@ public class GameManager : MonoBehaviour
                     go.transform.position = new Vector3(pathTestPath.X, pathTestPath.Z, pathTestPath.Y);
                     go.transform.localScale = new Vector3(30,30,30);
                 }
+            }
+            else if (msg.MessageCase == GameMessage.MessageOneofCase.SpawnMonster)
+            {
+                GameObject go = GameObject.Instantiate(monsterPrefab.gameObject, Vector3.zero, Quaternion.identity);
+                go.transform.position = new Vector3(msg.SpawnMonster.X, 0, msg.SpawnMonster.Z);
+                monsterGameObject = go.GetComponent<Monster>();
+            }
+            else if (msg.MessageCase == GameMessage.MessageOneofCase.MoveMonster)
+            {
+                monsterGameObject.transform.position = new Vector3(msg.MoveMonster.X, 0, msg.MoveMonster.Z);
             }
         }
     }

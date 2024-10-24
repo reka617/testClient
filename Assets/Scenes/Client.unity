@@ -464,6 +464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a9408780d21ecf4eb19fe7921f88834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monsterPrefab: {fileID: -6701887042575600055, guid: 25119cc0c3b2148eea18f6828ad2f51c, type: 3}
 --- !u!114 &445465792
 MonoBehaviour:
   m_ObjectHideFlags: 0

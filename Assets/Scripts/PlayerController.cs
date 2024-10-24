@@ -29,9 +29,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void Start()
-    {
-        
-    }
+    {}
 
     void SpawnMyPlayer( Vector3 spawnPos)
     {

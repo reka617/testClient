@@ -14,7 +14,7 @@ public class TcpProtobufClient : MonoBehaviour
     private bool isRunning = false;
 
     private const string SERVER_IP = "127.0.0.1";
-    private const int SERVER_PORT = 8888;
+    private const int SERVER_PORT = 9090;
 
     private void Awake()
     {
